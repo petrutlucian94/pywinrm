@@ -1,3 +1,9 @@
+import ssl
+try:
+    ssl._create_default_https_context  = ssl._create_unverified_context
+except AttributeError:
+    pass
+
 import re
 import base64
 import xml.etree.ElementTree as ET
